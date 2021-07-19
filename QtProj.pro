@@ -32,11 +32,11 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
     qnode.h \
-    add_entry_dialog.h
+    add_entry_dialog.h \
+    TestParams.h
 
 FORMS += \
         mainwindow.ui \
-    addentry_dialog.ui \
     add_entry_dialog.ui
 
 unix: CONFIG += link_pkgconfig

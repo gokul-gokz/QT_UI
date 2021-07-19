@@ -34,6 +34,14 @@ private slots:
 
     void on_Addentry_clicked();
 
+    void on_Cleartest_clicked();
+
+    void on_LoadTest_clicked();
+
+    void on_SaveTest_clicked();
+
+    void on_Runtest_clicked();
+
 private:
     Ui::MainWindow *ui;
     QNode qnode;

@@ -141,27 +141,17 @@
      <string>File location</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>530</y>
-      <width>86</width>
-      <height>25</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>480</y>
-      <width>191</width>
-      <height>281</height>
+      <y>430</y>
+      <width>421</width>
+      <height>219</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0" rowspan="5">
       <widget class="QTableWidget" name="tableWidget">
        <row>
         <property name="text">
@@ -190,22 +180,66 @@
        </row>
        <column>
         <property name="text">
-         <string>Value</string>
+         <string>1</string>
         </property>
        </column>
       </widget>
      </item>
-     <item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>File Path</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>18</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPlainTextEdit" name="filepath"/>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="SaveTest">
+       <property name="text">
+        <string>Save Test</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="LoadTest">
+       <property name="text">
+        <string>Load Test</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QPushButton" name="Cleartest">
+       <property name="text">
+        <string>Clear Test</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
       <widget class="QPushButton" name="Addentry">
        <property name="text">
         <string>Add entry</string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QPushButton" name="Createtest">
+     <item row="5" column="2">
+      <widget class="QPushButton" name="Runtest">
        <property name="text">
-        <string>Create Test</string>
+        <string>Run Test</string>
        </property>
       </widget>
      </item>

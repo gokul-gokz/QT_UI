@@ -3,8 +3,8 @@
 #include "add_entry_dialog.h"
 #include <QtWidgets>
 #include <vector>
-
-
+#include <fstream>
+#include "TestParams.h"
 MainWindow::MainWindow(int argc, char** argv, QWidget *parent) :
     QMainWindow(parent), qnode(argc, argv),
     ui(new Ui::MainWindow)
@@ -151,5 +151,45 @@ void MainWindow::on_Addentry_clicked()
 
 
 
+
+}
+
+void MainWindow::on_SaveTest_clicked()
+{
+    QString fpath= ui->filepath->toPlainText();
+    std::string filepath = fromQString(fpath);
+    printf("%s",filepath);
+    if (filepath.size()==0)
+        return;
+//    filepath="/home/gokul/test.csv";
+    std::ofstream TFile(filepath);
+    TFile<<"Barcode_numbers"<<","<<"TestTube_Slots"<<","<<"TestStrip_slots"<<","<<"TestTime"<<","<<"Comments"<<"\n";
+    for (int i=0;i<barcode_numbers.size();i++)
+    {
+        TFile<<fromQString(barcode_numbers[i])<<","<<TestTube_slots[i]<<","<<TestStrip_slots[i]<<","<<Test_Times[i]<<","<<fromQString(Comments[i])<<"\n";
+    }
+    TFile.close();
+}
+
+void MainWindow::on_Cleartest_clicked()
+{
+    ui->tableWidget->setColumnCount(1);
+    ui->tableWidget->clearContents();
+    barcode_numbers.clear();
+    TestTube_slots.clear();
+    TestStrip_slots.clear();
+    Test_Times.clear();
+    Comments.clear();
+}
+
+void MainWindow::on_LoadTest_clicked()
+{
+ return;
+}
+
+
+
+void MainWindow::on_Runtest_clicked()
+{
 
 }

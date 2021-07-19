@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>add_entry_dialog</class>
+ <widget class="QDialog" name="add_entry_dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>344</width>
+    <height>352</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>344</width>
+     <height>352</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QLabel" name="TTSlot">
+      <property name="text">
+       <string>TT Slot No</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QSpinBox" name="TestTime"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QSpinBox" name="TTSlotNo"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="Barcode">
+      <property name="text">
+       <string>Barcode No</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="TSslot_label">
+      <property name="text">
+       <string>TS Slot No</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="Tessttime_label">
+      <property name="text">
+       <string>Test Time</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QDialogButtonBox" name="ok">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="Comments_Label">
+      <property name="text">
+       <string>Comments</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPlainTextEdit" name="Comments"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QSpinBox" name="TSSlotNo"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="BarcodeNo"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

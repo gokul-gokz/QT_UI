@@ -26,15 +26,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    qnode.cpp
+    qnode.cpp \
+    add_entry_dialog.cpp
 
 HEADERS += \
         mainwindow.h \
-    qnode.h
+    qnode.h \
+    add_entry_dialog.h
 
 FORMS += \
         mainwindow.ui \
-    addentry_dialog.ui
+    addentry_dialog.ui \
+    add_entry_dialog.ui
 
 unix: CONFIG += link_pkgconfig
 unix: PKGCONFIG += roscpp

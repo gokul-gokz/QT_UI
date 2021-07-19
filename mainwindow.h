@@ -32,11 +32,24 @@ private slots:
     void on_pauseButton_clicked();
     void on_stopButton_clicked();
 
+    void on_Addentry_clicked();
+
 private:
     Ui::MainWindow *ui;
     QNode qnode;
     QString mResourceDir;
 
+    //QTable values
+    std::vector<QString> barcode_numbers;
+    std::vector<int> TestTube_slots;
+    std::vector<int> TestStrip_slots;
+    std::vector<int> Test_Times;
+    std::vector<QString> Comments;
+
+    enum CNAMES
+    {
+        BARCODE,TESTTUBE,TESTSTRIP,TIME,COMMENT
+    };
 };
 
 #endif // MAINWINDOW_H

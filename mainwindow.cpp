@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "add_entry_dialog.h"
 #include <QtWidgets>
+#include <vector>
 
 
 MainWindow::MainWindow(int argc, char** argv, QWidget *parent) :
@@ -13,6 +15,12 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent) :
     QObject::connect(&qnode, SIGNAL(msgSubscribed()), this, SLOT(updateSubBox()));
     QObject::connect(&qnode, SIGNAL(ImagemsgSubscribed()), this, SLOT(updateGraphicsBox()));
 
+//    //QTable values
+//    std::vector<QString> barcode_numbers[30];
+//    std::vector<int> TestTube_slots[30];
+//    std::vector<int> TestStrip_slots[30];
+//    std::vector<int> Test_Times[30];
+//    std::vector<int> Comments[30];
 }
 
 MainWindow::~MainWindow()
@@ -114,4 +122,34 @@ void MainWindow::on_pauseButton_clicked()
     std_msgs::String pub_msg;
     pub_msg.data = "2";
     qnode.control_flow_pub.publish(pub_msg);
+}
+
+
+void MainWindow::on_Addentry_clicked()
+{
+    int res;
+    int current_col=ui->tableWidget->columnCount()-1;
+    add_entry_dialog ad(this);
+    res=ad.exec();
+    if (res==QDialog::Rejected)
+        return;
+    QString a = ad.barcode();
+
+    barcode_numbers.push_back(ad.barcode());
+    TestTube_slots.push_back(ad.testtube_slot_no());
+    TestStrip_slots.push_back(ad.teststrip_slot_no());
+    Test_Times.push_back(ad.test_time());
+    Comments.push_back(ad.comments());
+
+    ui->tableWidget->insertColumn(1);
+    ui->tableWidget->setItem(BARCODE,current_col,new QTableWidgetItem(barcode_numbers.back()));
+    ui->tableWidget->setItem(TESTTUBE,current_col,new QTableWidgetItem(QString::number(TestTube_slots.back())));
+    ui->tableWidget->setItem(TESTSTRIP,current_col,new QTableWidgetItem(QString::number(TestStrip_slots.back())));
+    ui->tableWidget->setItem(TIME,current_col,new QTableWidgetItem(QString::number(Test_Times.back())));
+    ui->tableWidget->setItem(COMMENT,current_col,new QTableWidgetItem(Comments.back()));
+
+
+
+
+
 }

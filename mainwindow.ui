@@ -151,45 +151,65 @@
      </rect>
     </property>
    </widget>
-   <widget class="QTableWidget" name="tableWidget">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>80</x>
       <y>480</y>
-      <width>256</width>
-      <height>192</height>
+      <width>191</width>
+      <height>281</height>
      </rect>
     </property>
-    <row>
-     <property name="text">
-      <string>Value</string>
-     </property>
-    </row>
-    <column>
-     <property name="text">
-      <string>Barcode Number</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>TT Slot Number</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>TS Slot Number</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Test Time</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Assay Information</string>
-     </property>
-    </column>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTableWidget" name="tableWidget">
+       <row>
+        <property name="text">
+         <string>Barcode No</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>TT Slot No</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>TS Slot No</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Test Time</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Comments</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>Value</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Addentry">
+       <property name="text">
+        <string>Add entry</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Createtest">
+       <property name="text">
+        <string>Create Test</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

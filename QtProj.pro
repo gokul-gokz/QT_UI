@@ -33,7 +33,8 @@ HEADERS += \
     qnode.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    addentry_dialog.ui
 
 unix: CONFIG += link_pkgconfig
 unix: PKGCONFIG += roscpp

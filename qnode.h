@@ -10,6 +10,8 @@
 #include <QThread>
 #include <QStringListModel>
 #include <QImage>
+#include <TestParams.h>
+#include <Params.h>
 
 class QNode : public QThread {
     Q_OBJECT
@@ -21,6 +23,7 @@ public:
     void run();
     ros::Publisher pub;
     ros::Publisher control_flow_pub;
+    ros::Publisher test_params_pub;
 
     // callback
     void topicCallback(const std_msgs::String::ConstPtr& msg);

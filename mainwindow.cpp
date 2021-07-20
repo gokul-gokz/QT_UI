@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include "TestParams.h"
+#include "Params.h"
 MainWindow::MainWindow(int argc, char** argv, QWidget *parent) :
     QMainWindow(parent), qnode(argc, argv),
     ui(new Ui::MainWindow)
@@ -191,5 +192,15 @@ void MainWindow::on_LoadTest_clicked()
 
 void MainWindow::on_Runtest_clicked()
 {
+ r2d2_params::TestParams tp;
+ for (int i=0;i<barcode_numbers.size();i++)
+ {
+    r2d2_params::Params p;
+    p.Barcode=fromQString(barcode_numbers[i]);
+    p.Teststrip_slot=TestStrip_slots[i];
+    p.Test_time = Test_Times[i];
 
+    tp.data.push_back(p);
+ }
+ qnode.test_params_pub.publish(tp);
 }

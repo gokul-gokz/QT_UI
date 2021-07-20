@@ -33,7 +33,8 @@ HEADERS += \
         mainwindow.h \
     qnode.h \
     add_entry_dialog.h \
-    TestParams.h
+    TestParams.h \
+    Params.h
 
 FORMS += \
         mainwindow.ui \

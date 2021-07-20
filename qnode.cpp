@@ -4,6 +4,7 @@
 #include <sensor_msgs/Image.h>
 #include <string>
 
+
 QNode::QNode(int argc, char** argv):
     init_argc(argc),
     init_argv(argv)
@@ -27,6 +28,7 @@ bool QNode::init() {
     sub_image = node.subscribe("/image", 5, &QNode::imageCallback, this);
     pub = node.advertise<std_msgs::String>("/chatter", 5);
     control_flow_pub = node.advertise<std_msgs::String>("/control_flow", 5);
+    test_params_pub = node.advertise<r2d2_params::TestParams>("/test_params",5);
     start();
     std::cout << "Successfully initialized node." << std::endl;
     return true;

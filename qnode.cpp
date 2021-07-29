@@ -24,7 +24,7 @@ bool QNode::init() {
     }
     ros::start();
     ros::NodeHandle node;
-    subs = node.subscribe("/chatter", 5, &QNode::topicCallback, this);
+    subs = node.subscribe("/Diagnostic_msgs", 5, &QNode::topicCallback, this);
     sub_image = node.subscribe("/image", 5, &QNode::imageCallback, this);
     pub = node.advertise<std_msgs::String>("/chatter", 5);
     control_flow_pub = node.advertise<std_msgs::String>("/control_flow", 5);

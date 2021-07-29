@@ -27,7 +27,7 @@ public slots:
 
 
 private slots:
-    void on_publishButton_clicked();
+//    void on_publishButton_clicked();
     void on_startButton_clicked();
     void on_pauseButton_clicked();
     void on_stopButton_clicked();

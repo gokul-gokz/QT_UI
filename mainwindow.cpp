@@ -70,37 +70,37 @@ void MainWindow::updateGraphicsBox(){
 }
 
 // publish text written on the input text box when button is pressed
-void MainWindow::on_publishButton_clicked()
-{
-    std_msgs::String pub_msg;
-    QString inputQString = ui->pubText->toPlainText();
-    std::string inputString = fromQString(inputQString);
-    qnode.pub_message = inputString;
-    pub_msg.data = inputString;
-    qnode.pub.publish(pub_msg);
+//void MainWindow::on_publishButton_clicked()
+//{
+//    std_msgs::String pub_msg;
+//    QString inputQString = ui->pubText->toPlainText();
+//    std::string inputString = fromQString(inputQString);
+//    qnode.pub_message = inputString;
+//    pub_msg.data = inputString;
+//    qnode.pub.publish(pub_msg);
 
-//    QString filename = QFileDialog::getOpenFileName(this,
-//                                                    tr("Load Image"),
-//                                                    mResourceDir,
-//                                                    tr("Images (*.png *.jpeg)"));
+////    QString filename = QFileDialog::getOpenFileName(this,
+////                                                    tr("Load Image"),
+////                                                    mResourceDir,
+////                                                    tr("Images (*.png *.jpeg)"));
 
-//    if (filename.isEmpty())  {
-//        return;
-//    }
+////    if (filename.isEmpty())  {
+////        return;
+////    }
 
-//    QPixmap p(filename);
-
-
-//    if (! ui->graphicsView->scene()) {
-////        qDebug() << "No Scene!";
-
-//        QGraphicsScene *scene = new QGraphicsScene(this);
-//        ui->graphicsView->setScene(scene);
-//    }
-//    ui->graphicsView->scene()->addPixmap(p);
+////    QPixmap p(filename);
 
 
-}
+////    if (! ui->graphicsView->scene()) {
+//////        qDebug() << "No Scene!";
+
+////        QGraphicsScene *scene = new QGraphicsScene(this);
+////        ui->graphicsView->setScene(scene);
+////    }
+////    ui->graphicsView->scene()->addPixmap(p);
+
+
+//}
 
 void MainWindow::on_startButton_clicked()
 {
